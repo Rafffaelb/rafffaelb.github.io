@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI-based Fault Detection in Drones — Rafael A. Batista</title>
+  <meta name="description" content="Embedded system for failure diagnosis in UAVs using AI and chaos theory on FPGA" />
+  <link rel="stylesheet" href="styles.css?v=15.0">
+</head>
+
+<body class="bg-dark-grey text-light-grey antialiased">
+
+  <!-- NAVBAR -->
+  <header class="fixed w-full z-50 bg-dark-grey/80 backdrop-blur border-b border-medium-grey">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-3">
+      <h1 class="text-base font-semibold text-white">Rafael A. Batista</h1>
+      <nav class="space-x-6 text-sm text-medium-grey">
+        <a href="index.html" class="hover:text-white transition">Home</a>
+        <a href="index.html#about" class="hover:text-white transition">About</a>
+        <a href="index.html#projects" class="hover:text-white transition">Projects</a>
+        <a href="index.html#publications" class="hover:text-white transition">Publications</a>
+        <a href="index.html#contact" class="hover:text-white transition">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PROJECT DETAIL -->
+  <section class="min-h-screen pt-32 pb-16 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="mb-4">
+        <a href="index.html#projects" class="text-accent hover:text-white transition">← Back to Projects</a>
+      </div>
+
+      <h1 class="text-3xl md:text-4xl font-bold mb-4 text-white">
+        AI-based Fault Detection in Drones Using FPGA
+      </h1>
+
+      <div class="flex gap-2 mb-8">
+        <span class="tech-item">Drones/UAVs</span>
+        <span class="tech-item">AI/ML</span>
+        <span class="tech-item">FPGA</span>
+        <span class="tech-item">Chaos Theory</span>
+        <span class="tech-item">Embedded Systems</span>
+      </div>
+
+      <!-- Overview -->
+      <div class="mb-8 bg-light-grey p-6 rounded-xl border border-medium-grey">
+        <h2 class="text-xl font-semibold mb-4 text-white flex items-center gap-2">
+          <span>🚁</span> Project Overview
+        </h2>
+        <p class="text-medium-grey mb-4 leading-relaxed">
+          This project developed an embedded system for <strong class="text-white">real-time failure diagnosis
+            in drones</strong> using artificial intelligence and chaos-based detection methods (SAC-DM) implemented
+          on FPGA platforms.
+        </p>
+        <p class="text-medium-grey leading-relaxed">
+          The system enables autonomous UAVs to detect and classify mechanical and electrical failures in real-time,
+          improving flight safety and enabling predictive maintenance for commercial and industrial drone applications.
+        </p>
+      </div>
+
+      <!-- Research Context -->
+      <div class="mb-8">
+        <h2 class="text-xl font-semibold mb-4 text-white flex items-center gap-2">
+          <span>🔬</span> Research Context
+        </h2>
+        <p class="text-medium-grey mb-4 leading-relaxed">
+          <strong class="text-white">Position:</strong> Guest Researcher in Electrical Engineering<br>
+          <strong class="text-white">Institution:</strong> Technische Universität Dresden (TUD), Germany<br>
+          <strong class="text-white">Period:</strong> 2023 - 2024<br>
+          <strong class="text-white">Funding:</strong> CAPES (Brazilian Federal Agency for Support and Evaluation of
+          Graduate Education)
+        </p>
+        <p class="text-medium-grey leading-relaxed">
+          This research focused on adaptive complex systems and reconfigurable computing, investigating how
+          chaos theory principles can be applied to real-time fault detection in autonomous systems.
+        </p>
+      </div>
+
+      <!-- Publication -->
+      <div class="mb-8 bg-light-grey p-6 rounded-xl border border-accent">
+        <h2 class="text-xl font-semibold mb-4 text-white flex items-center gap-2">
+          <span>📚</span> Publication
+        </h2>
+        <div class="publication-authors mb-2">
+          <span class="text-white">BATISTA, R. A.; NICKEL, M.; LEHNERT, A.; PERTUZ, S.; REICHENBACH, M.; GOEHRINGER, D.;
+            BRITO, A.</span>
+        </div>
+        <div class="publication-title mb-2">
+          "Towards an Embedded System for Failure Diagnosis in Drones Using AI and SAC-DM on FPGA"
+        </div>
+        <div class="publication-venue mb-3">
+          <em class="text-medium-grey">2024 Design, Automation & Test in Europe Conference & Exhibition (DATE)</em>,
+          Valencia, Spain, 2024
+        </div>
+        <a href="#" class="publication-link">View Conference Proceedings</a>
+      </div>
+
+      <!-- Technical Details -->
+      <div class="mb-8">
+        <h2 class="text-xl font-semibold mb-4 text-white flex items-center gap-2">
+          <span>⚙️</span> Technical Approach
+        </h2>
+        <div class="bg-light-grey p-6 rounded-xl border border-medium-grey">
+          <h3 class="text-lg font-semibold mb-3 text-white">SAC-DM Methodology</h3>
+          <p class="text-medium-grey mb-4 leading-relaxed">
+            <strong class="text-white">SAC-DM (Statistical Analysis of Chaos - Diagnostic Method)</strong> is a
+            chaos theory-based approach for detecting anomalies in complex dynamic systems. The method analyzes
+            the chaotic behavior of sensor data to identify deviations from normal operational patterns.
+          </p>
+
+          <h3 class="text-lg font-semibold mb-3 text-white">Key Components</h3>
+          <ul class="space-y-2 text-medium-grey mb-6">
+            <li class="flex items-start">
+              <span class="text-accent mr-2">▸</span>
+              <span><strong class="text-white">FPGA Implementation:</strong> Hardware acceleration for real-time
+                processing of sensor streams</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-accent mr-2">▸</span>
+              <span><strong class="text-white">AI/ML Integration:</strong> Machine learning models for fault
+                classification and prediction</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-accent mr-2">▸</span>
+              <span><strong class="text-white">Chaos Analysis:</strong> Real-time calculation of Lyapunov exponents and
+                other chaotic indicators</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-accent mr-2">▸</span>
+              <span><strong class="text-white">Sensor Fusion:</strong> Integration of multiple sensor modalities (IMU,
+                vibration, current sensors)</span>
+            </li>
+          </ul>
+
+          <h3 class="text-lg font-semibold mb-3 text-white">Technologies Used</h3>
+          <div class="tech-container">
+            <span class="tech-item">Xilinx FPGAs</span>
+            <span class="tech-item">Vivado HLS</span>
+            <span class="tech-item">Python/TensorFlow</span>
+            <span class="tech-item">C/C++</span>
+            <span class="tech-item">VHDL/Verilog</span>
+            <span class="tech-item">MATLAB/Simulink</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fault Types -->
+      <div class="mb-8">
+        <h2 class="text-xl font-semibold mb-4 text-white flex items-center gap-2">
+          <span>🔍</span> Detectable Fault Types
+        </h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-light-grey p-4 rounded-lg border border-medium-grey">
+            <h3 class="text-white font-semibold mb-2">⚡ Electrical Failures</h3>
+            <ul class="text-medium-grey text-sm space-y-1">
+              <li>• Battery degradation</li>
+              <li>• Motor driver faults</li>
+              <li>• Power supply irregularities</li>
+              <li>• Sensor malfunctions</li>
+            </ul>
+          </div>
+          <div class="bg-light-grey p-4 rounded-lg border border-medium-grey">
+            <h3 class="text-white font-semibold mb-2">🔧 Mechanical Failures</h3>
+            <ul class="text-medium-grey text-sm space-y-1">
+              <li>• Propeller damage or imbalance</li>
+              <li>• Motor bearing wear</li>
+              <li>• Structural vibrations</li>
+              <li>• Actuator degradation</li>
+            </ul>
+          </div>
+          <div class="bg-light-grey p-4 rounded-lg border border-medium-grey">
+            <h3 class="text-white font-semibold mb-2">🎯 Control Anomalies</h3>
+            <ul class="text-medium-grey text-sm space-y-1">
+              <li>• GPS/navigation errors</li>
+              <li>• IMU drift or bias</li>
+              <li>• Flight controller issues</li>
+              <li>• Communication loss</li>
+            </ul>
+          </div>
+          <div class="bg-light-grey p-4 rounded-lg border border-medium-grey">
+            <h3 class="text-white font-semibold mb-2">🌡️ Environmental Factors</h3>
+            <ul class="text-medium-grey text-sm space-y-1">
+              <li>• Wind disturbances</li>
+              <li>• Temperature effects</li>
+              <li>• Payload changes</li>
+              <li>• Atmospheric variations</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- System Features -->
+      <div class="mb-8">
+        <h2 class="text-xl font-semibold mb-4 text-white flex items-center gap-2">
+          <span>✨</span> Key Features
+        </h2>
+        <div class="bg-light-grey p-6 rounded-xl border border-medium-grey">
+          <ul class="space-y-3 text-medium-grey">
+            <li class="flex items-start">
+              <span class="text-accent mr-2 text-xl">⚡</span>
+              <div>
+                <strong class="text-white">Real-time Processing:</strong> Hardware acceleration enables
+                fault detection within milliseconds, critical for safe autonomous operation
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span class="text-accent mr-2 text-xl">🎯</span>
+              <div>
+                <strong class="text-white">High Accuracy:</strong> AI-based classification achieves
+                robust fault identification even under varying flight conditions
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span class="text-accent mr-2 text-xl">🔋</span>
+              <div>
+                <strong class="text-white">Low Power Consumption:</strong> FPGA implementation provides
+                efficient computation suitable for battery-powered UAVs
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span class="text-accent mr-2 text-xl">📊</span>
+              <div>
+                <strong class="text-white">Predictive Maintenance:</strong> Early fault detection enables
+                proactive maintenance scheduling and extends drone lifespan
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span class="text-accent mr-2 text-xl">🔄</span>
+              <div>
+                <strong class="text-white">Adaptive Learning:</strong> System can be retrained for
+                different drone platforms and operational environments
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Applications -->
+      <div class="mb-8">
+        <h2 class="text-xl font-semibold mb-4 text-white flex items-center gap-2">
+          <span>🎯</span> Target Applications
+        </h2>
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="bg-light-grey p-4 rounded-lg border border-medium-grey">
+            <h3 class="text-white font-semibold mb-2">🏭 Industrial Inspection</h3>
+            <p class="text-medium-grey text-sm">
+              Autonomous drones for infrastructure monitoring and industrial asset inspection
+            </p>
+          </div>
+          <div class="bg-light-grey p-4 rounded-lg border border-medium-grey">
+            <h3 class="text-white font-semibold mb-2">📦 Delivery Services</h3>
+            <p class="text-medium-grey text-sm">
+              Ensuring reliability and safety for commercial drone delivery operations
+            </p>
+          </div>
+          <div class="bg-light-grey p-4 rounded-lg border border-medium-grey">
+            <h3 class="text-white font-semibold mb-2">🚨 Emergency Response</h3>
+            <p class="text-medium-grey text-sm">
+              Critical applications requiring high reliability such as search and rescue
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Impact -->
+      <div class="mb-8 bg-light-grey p-6 rounded-xl border border-medium-grey">
+        <h2 class="text-xl font-semibold mb-4 text-white">Research Impact</h2>
+        <p class="text-medium-grey leading-relaxed">
+          This work demonstrates the viability of implementing sophisticated AI-based diagnostics on
+          resource-constrained embedded platforms. The combination of chaos theory and machine learning
+          provides a novel approach to fault detection that is both computationally efficient and highly
+          accurate, paving the way for more reliable autonomous drone systems in commercial and industrial
+          applications.
+        </p>
+      </div>
+
+      <!-- Actions -->
+      <div class="flex gap-4 mt-8 flex-wrap">
+        <a href="index.html#projects" class="btn-primary">
+          ← Back to Projects
+        </a>
+        <a href="index.html#publications" class="btn-secondary">
+          View Publication
+        </a>
+        <a href="index.html#contact" class="btn-secondary">
+          Discuss This Project
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-medium-grey py-6 text-center text-sm text-dark-grey">
+    © 2026 Rafael A. Batista · Built with HTML + CSS
+  </footer>
+
+  <script src="script.js?v=15.0"></script>
+</body>
+
+</html>
