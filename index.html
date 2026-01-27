@@ -70,14 +70,18 @@
   <header class="fixed w-full z-50 bg-dark-grey/80 backdrop-blur border-b border-medium-grey">
     <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-3">
       <h1 class="text-base font-semibold text-white">Rafael A. Batista</h1>
-      <nav class="space-x-6 text-sm text-medium-grey">
-        <a href="#about" class="hover:text-white transition">About</a>
-        <a href="#education" class="hover:text-white transition">Education</a>
-        <a href="#research" class="hover:text-white transition">Research</a>
-        <a href="#projects" class="hover:text-white transition">Projects</a>
-        <a href="#publications" class="hover:text-white transition">Publications</a>
-        <a href="#skills" class="hover:text-white transition">Skills</a>
-        <a href="#contact" class="hover:text-white transition">Contact</a>
+      <nav class="flex items-center space-x-6 text-sm text-medium-grey">
+        <a href="#about" class="hover:text-white transition" data-i18n-nav="about">About</a>
+        <a href="#education" class="hover:text-white transition" data-i18n-nav="education">Education</a>
+        <a href="#research" class="hover:text-white transition" data-i18n-nav="research">Research</a>
+        <a href="#projects" class="hover:text-white transition" data-i18n-nav="projects">Projects</a>
+        <a href="#publications" class="hover:text-white transition" data-i18n-nav="publications">Publications</a>
+        <a href="#skills" class="hover:text-white transition" data-i18n-nav="skills">Skills</a>
+        <a href="#contact" class="hover:text-white transition" data-i18n-nav="contact">Contact</a>
+        <button id="langToggle" class="lang-toggle" title="Switch language / Mudar idioma">
+          <span class="lang-flag">🇺🇸</span>
+          <span class="lang-text">EN</span>
+        </button>
       </nav>
     </div>
   </header>
@@ -90,9 +94,10 @@
           style="width: 200px; height: 200px; border-radius: 50%; border: 4px solid #555555; object-fit: cover;">
       </div>
       <h2 class="text-4xl md:text-6xl font-bold mb-6">
-        Hello, I'm <span class="text-white gradient-text">Rafael A. Batista</span>
+        <span data-i18n="hero.greeting">Hello, I'm</span> <span class="text-white gradient-text">Rafael A.
+          Batista</span>
       </h2>
-      <p class="text-medium-grey text-lg leading-relaxed mb-4">
+      <p class="text-medium-grey text-lg leading-relaxed mb-4" data-i18n="hero.subtitle">
         Postdoc Researcher · Signal Processing · Reconfigurable Computing · Real‑time Systems
       </p>
       <div class="stats-container flex justify-center gap-8 mb-8">
@@ -110,13 +115,13 @@
         </div>
       </div>
       <div class="mt-8 flex justify-center gap-4">
-        <a href="#projects" class="btn-primary">
+        <a href="#projects" class="btn-primary" data-i18n="hero.viewWork">
           View Work
         </a>
-        <a href="Curriculum_vitae.pdf" class="btn-secondary">
+        <a href="Curriculum_vitae.pdf" class="btn-secondary" data-i18n="hero.downloadCV">
           Download CV
         </a>
-        <a href="Curriculum_vitae_publications.pdf" class="btn-secondary">
+        <a href="Curriculum_vitae_publications.pdf" class="btn-secondary" data-i18n="hero.cvPublications">
           CV + Publications
         </a>
       </div>
@@ -128,22 +133,22 @@
     style="position: relative; z-index: 10; background-color: #1a1a1a;">
     <h3 class="section-title">
       <span class="section-icon">👨‍🔬</span>
-      About Me
+      <span data-i18n="about.title">About Me</span>
     </h3>
     <div class="grid md:grid-cols-2 gap-8">
       <div>
-        <p class="text-medium-grey leading-relaxed mb-4">
+        <p class="text-medium-grey leading-relaxed mb-4" data-i18n="about.intro">
           I'm a postdoctoral researcher and applied physicist working at the intersection of <strong
             class="text-white">physics,
             real‑time digital signal processing, and hardware acceleration</strong>.
         </p>
-        <p class="text-medium-grey leading-relaxed mb-4">
+        <p class="text-medium-grey leading-relaxed mb-4" data-i18n="about.journey">
           My research journey began in <strong class="text-white">quantum physics</strong>, where I focused on numerical
           simulations
           and statistical analysis of quantum transport in mesoscopic systems during my PhD at the Federal
           University of Paraíba (UFPB).
         </p>
-        <p class="text-medium-grey leading-relaxed">
+        <p class="text-medium-grey leading-relaxed" data-i18n="about.transition">
           I've since transitioned to applied engineering, concentrating on <strong class="text-white">adaptive complex
             systems
             and reconfigurable computing</strong>. My work has spanned from real-time fault detection in drones using
@@ -152,7 +157,7 @@
         </p>
       </div>
       <div>
-        <h4 class="text-xl font-semibold mb-4 text-white">Research Interests</h4>
+        <h4 class="text-xl font-semibold mb-4 text-white" data-i18n="about.interestsTitle">Research Interests</h4>
         <ul class="space-y-2 text-medium-grey">
           <li class="flex items-start">
             <span class="text-accent mr-2">▸</span>
@@ -562,7 +567,7 @@
       <span class="section-icon">📧</span>
       Contact
     </h3>
-    <p class="text-medium-grey mb-6 max-w-2xl mx-auto text-center">
+    <p class="text-medium-grey mb-6 max-w-2xl mx-auto text-center" data-i18n="contact.description">
       Feel free to reach out for collaborations, research opportunities, or engineering work.
       I'm always open to discussing new projects and ideas.
     </p>
@@ -592,13 +597,14 @@
 
   <!-- FOOTER -->
   <footer class="border-t border-medium-grey py-6 text-center text-sm text-dark-grey">
-    <p>© 2026 Rafael A. Batista · Built with HTML + CSS</p>
+    <p data-i18n="footer.copyright">© 2026 Rafael A. Batista · Built with HTML + CSS</p>
     <p class="mt-2">
       <a href="mailto:rafael.alves.batista@gmail.com"
         class="hover:text-white transition">rafael.alves.batista@gmail.com</a>
     </p>
   </footer>
 
+  <script src="translations.js"></script>
   <script src="script.js?v=15.0"></script>
 </body>
 
