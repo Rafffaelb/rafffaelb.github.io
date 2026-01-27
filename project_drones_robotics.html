@@ -9,11 +9,11 @@
   <link rel="stylesheet" href="styles.css?v=15.0">
 </head>
 
-<body class="bg-dark-grey text-light-grey antialiased">
+<body class="bg-dark-grey text-light-grey antialiased flex flex-col min-h-screen">
 
   <!-- NAVBAR -->
-  <header class="fixed w-full z-50 bg-dark-grey/80 backdrop-blur border-b border-medium-grey">
-    <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-3">
+  <header class="fixed w-full z-50 bg-dark-grey border-b border-medium-grey">
+    <div class="max-w-4xl mx-auto flex justify-between items-center px-6 py-3">
       <h1 class="text-base font-semibold text-white">Rafael A. Batista</h1>
       <nav class="space-x-6 text-sm text-medium-grey">
         <a href="index.html" class="hover:text-white transition">Home</a>
@@ -30,15 +30,16 @@
   </header>
 
   <!-- PROJECT DETAIL -->
-  <section class="min-h-screen pt-32 pb-16 px-6">
+  <section class="flex-grow project-header-section px-6">
     <div class="max-w-4xl mx-auto">
-      <div class="mb-4">
-        <a href="index.html#projects" class="text-accent hover:text-white transition" data-i18n="page_drone.back">← Back
-          to Projects</a>
+      <div class="mb-2">
+        <a href="index.html#projects" class="breadcrumb-back" data-i18n="page_drone.back">
+          <span>←</span> Back to Projects
+        </a>
       </div>
 
-      <h1 class="text-3xl md:text-4xl font-bold mb-4 text-white" data-i18n="page_drone.title">
-        AI-based Fault Detection in Drones Using FPGA
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 text-white leading-tight" data-i18n="page_drone.title">
+        <span class="gradient-text">AI-based Fault Detection</span> in Drones Using FPGA
       </h1>
 
       <div class="flex gap-2 mb-8">
@@ -50,40 +51,48 @@
       </div>
 
       <!-- Overview -->
-      <div class="mb-8 bg-light-grey p-6 rounded-xl border border-medium-grey">
-        <h2 class="text-xl font-semibold mb-4 text-white flex items-center gap-2">
-          <span>🚁</span> <span data-i18n="page_drone.overview.title">Project Overview</span>
-        </h2>
-        <p class="text-medium-grey mb-4 leading-relaxed" data-i18n="page_drone.overview.p1">
+      <div class="mb-12 bg-light-grey p-8 rounded-2xl border border-medium-grey relative overflow-hidden">
+        <div class="absolute top-0 right-0 p-4 opacity-10 text-6xl">🚁</div>
+        <span class="project-section-label" data-i18n="page_drone.overview.title">Project Overview</span>
+        <p class="text-lg text-medium-grey mb-6 leading-relaxed" data-i18n="page_drone.overview.p1">
           This project developed an embedded system for <strong class="text-white">real-time failure diagnosis
             in drones</strong> using artificial intelligence and chaos-based detection methods (SAC-DM) implemented
           on FPGA platforms.
         </p>
-        <p class="text-medium-grey leading-relaxed" data-i18n="page_drone.overview.p2">
+        <p class="text-lg text-medium-grey leading-relaxed" data-i18n="page_drone.overview.p2">
           The system enables autonomous UAVs to detect and classify mechanical and electrical failures in real-time,
           improving flight safety and enabling predictive maintenance for commercial and industrial drone applications.
         </p>
       </div>
 
       <!-- Research Context -->
-      <div class="mb-8">
-        <h2 class="text-xl font-semibold mb-4 text-white flex items-center gap-2">
-          <span>🔬</span> <span data-i18n="page_drone.context.title">Research Context</span>
-        </h2>
-        <p class="text-medium-grey mb-4 leading-relaxed">
-          <strong class="text-white" data-i18n="page_drone.context.position">Position:</strong> Guest Researcher in
-          Electrical Engineering<br>
-          <strong class="text-white" data-i18n="page_drone.context.institution">Institution:</strong> Technische
-          Universität Dresden (TUD), Germany<br>
-          <strong class="text-white" data-i18n="page_drone.context.period">Period:</strong> 2023 - 2024<br>
-          <strong class="text-white" data-i18n="page_drone.context.funding">Funding:</strong> CAPES (Brazilian Federal
-          Agency for Support and Evaluation of
-          Graduate Education)
-        </p>
-        <p class="text-medium-grey leading-relaxed" data-i18n="page_drone.context.desc">
+      <div class="mb-12 grid md:grid-cols-2 gap-8">
+        <div>
+          <span class="project-section-label" data-i18n="page_drone.context.title">Research Context</span>
+          <div class="space-y-4 mt-4">
+            <div class="project-meta-item">
+              <span class="w-24 font-semibold text-white" data-i18n="page_drone.context.position">Position:</span>
+              <span class="text-medium-grey">Guest Researcher</span>
+            </div>
+            <div class="project-meta-item">
+              <span class="w-24 font-semibold text-white" data-i18n="page_drone.context.institution">Institution:</span>
+              <span class="text-medium-grey">Technische Universität Dresden (TUD)</span>
+            </div>
+            <div class="project-meta-item">
+              <span class="w-24 font-semibold text-white" data-i18n="page_drone.context.period">Period:</span>
+              <span class="text-medium-grey">2023 - 2024</span>
+            </div>
+            <div class="project-meta-item">
+              <span class="w-24 font-semibold text-white" data-i18n="page_drone.context.funding">Funding:</span>
+              <span class="text-medium-grey">CAPES</span>
+            </div>
+          </div>
+        </div>
+        <div class="text-medium-grey leading-relaxed flex items-center p-6 bg-medium-grey/20 rounded-xl"
+          data-i18n="page_drone.context.desc">
           This research focused on adaptive complex systems and reconfigurable computing, investigating how
           chaos theory principles can be applied to real-time fault detection in autonomous systems.
-        </p>
+        </div>
       </div>
 
       <!-- Publication -->
@@ -207,100 +216,34 @@
         </div>
       </div>
 
-      <!-- System Features -->
-      <div class="mb-8">
-        <h2 class="text-xl font-semibold mb-4 text-white flex items-center gap-2">
-          <span>✨</span> <span data-i18n="page_drone.features.title">Key Features</span>
-        </h2>
-        <div class="bg-light-grey p-6 rounded-xl border border-medium-grey">
-          <ul class="space-y-3 text-medium-grey">
-            <li class="flex items-start">
-              <span class="text-accent mr-2 text-xl">⚡</span>
-              <div data-i18n="page_drone.features.f1">
-                <strong class="text-white">Real-time Processing:</strong> Hardware acceleration enables
-                fault detection within milliseconds, critical for safe autonomous operation
-              </div>
-            </li>
-            <li class="flex items-start">
-              <span class="text-accent mr-2 text-xl">🎯</span>
-              <div data-i18n="page_drone.features.f2">
-                <strong class="text-white">High Accuracy:</strong> AI-based classification achieves
-                robust fault identification even under varying flight conditions
-              </div>
-            </li>
-            <li class="flex items-start">
-              <span class="text-accent mr-2 text-xl">🔋</span>
-              <div data-i18n="page_drone.features.f3">
-                <strong class="text-white">Low Power Consumption:</strong> FPGA implementation provides
-                efficient computation suitable for battery-powered UAVs
-              </div>
-            </li>
-            <li class="flex items-start">
-              <span class="text-accent mr-2 text-xl">📊</span>
-              <div data-i18n="page_drone.features.f4">
-                <strong class="text-white">Predictive Maintenance:</strong> Early fault detection enables
-                proactive maintenance scheduling and extends drone lifespan
-              </div>
-            </li>
-            <li class="flex items-start">
-              <span class="text-accent mr-2 text-xl">🔄</span>
-              <div data-i18n="page_drone.features.f5">
-                <strong class="text-white">Adaptive Learning:</strong> System can be retrained for
-                different drone platforms and operational environments
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Applications -->
-      <div class="mb-8">
-        <h2 class="text-xl font-semibold mb-4 text-white flex items-center gap-2">
-          <span>🎯</span> Target Applications
-        </h2>
-        <div class="grid md:grid-cols-3 gap-4">
-          <div class="bg-light-grey p-4 rounded-lg border border-medium-grey">
-            <h3 class="text-white font-semibold mb-2">🏭 Industrial Inspection</h3>
-            <p class="text-medium-grey text-sm">
-              Autonomous drones for infrastructure monitoring and industrial asset inspection
-            </p>
+      <!-- Features -->
+      <div class="mb-16">
+        <span class="project-section-label" data-i18n="page_drone.features.title">Key Features</span>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
+          <div class="p-6 bg-light-grey rounded-xl border border-medium-grey">
+            <div class="text-accent text-2xl mb-4 text-center">⚡</div>
+            <p class="text-sm text-center text-medium-grey" data-i18n="page_drone.features.f1">Real-time processing for
+              safe autonomous operation</p>
           </div>
-          <div class="bg-light-grey p-4 rounded-lg border border-medium-grey">
-            <h3 class="text-white font-semibold mb-2">📦 Delivery Services</h3>
-            <p class="text-medium-grey text-sm">
-              Ensuring reliability and safety for commercial drone delivery operations
-            </p>
+          <div class="p-6 bg-light-grey rounded-xl border border-medium-grey">
+            <div class="text-accent text-2xl mb-4 text-center">🎯</div>
+            <p class="text-sm text-center text-medium-grey" data-i18n="page_drone.features.f2">High accuracy robust
+              identification</p>
           </div>
-          <div class="bg-light-grey p-4 rounded-lg border border-medium-grey">
-            <h3 class="text-white font-semibold mb-2">🚨 Emergency Response</h3>
-            <p class="text-medium-grey text-sm">
-              Critical applications requiring high reliability such as search and rescue
-            </p>
+          <div class="p-6 bg-light-grey rounded-xl border border-medium-grey">
+            <div class="text-accent text-2xl mb-4 text-center">🔋</div>
+            <p class="text-sm text-center text-medium-grey" data-i18n="page_drone.features.f3">Low power consumption
+              suitable for UAVs</p>
           </div>
         </div>
-      </div>
-
-      <!-- Impact -->
-      <div class="mb-8 bg-light-grey p-6 rounded-xl border border-medium-grey">
-        <h2 class="text-xl font-semibold mb-4 text-white" data-i18n="page_drone.impact.title">Research Impact</h2>
-        <p class="text-medium-grey leading-relaxed" data-i18n="page_drone.impact.desc">
-          This work demonstrates the viability of implementing sophisticated AI-based diagnostics on
-          resource-constrained embedded platforms. The combination of chaos theory and machine learning
-          provides a novel approach to fault detection that is both computationally efficient and highly
-          accurate, paving the way for more reliable autonomous drone systems in commercial and industrial
-          applications.
-        </p>
       </div>
 
       <!-- Actions -->
-      <div class="flex gap-4 mt-8 flex-wrap">
-        <a href="index.html#projects" class="btn-primary">
+      <div class="flex gap-6 mt-12 flex-wrap items-center justify-center py-12 border-t border-medium-grey">
+        <a href="index.html#projects" class="btn-primary" data-i18n="page_radio.back">
           ← Back to Projects
         </a>
-        <a href="index.html#publications" class="btn-secondary">
-          View Publication
-        </a>
-        <a href="index.html#contact" class="btn-secondary">
+        <a href="index.html#contact" class="btn-secondary" data-i18n="contact.title">
           Discuss This Project
         </a>
       </div>

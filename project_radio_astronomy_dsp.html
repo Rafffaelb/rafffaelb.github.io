@@ -10,11 +10,11 @@
   <link rel="stylesheet" href="styles.css?v=15.0">
 </head>
 
-<body class="bg-dark-grey text-light-grey antialiased">
+<body class="bg-dark-grey text-light-grey antialiased flex flex-col min-h-screen">
 
   <!-- NAVBAR -->
-  <header class="fixed w-full z-50 bg-dark-grey/80 backdrop-blur border-b border-medium-grey">
-    <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-3">
+  <header class="fixed w-full z-50 bg-dark-grey border-b border-medium-grey">
+    <div class="max-w-4xl mx-auto flex justify-between items-center px-6 py-3">
       <h1 class="text-base font-semibold text-white">Rafael A. Batista</h1>
       <nav class="space-x-6 text-sm text-medium-grey">
         <a href="index.html" class="hover:text-white transition">Home</a>
@@ -31,15 +31,16 @@
   </header>
 
   <!-- PROJECT DETAIL -->
-  <section class="min-h-screen pt-32 pb-16 px-6">
+  <section class="flex-grow project-header-section px-6">
     <div class="max-w-4xl mx-auto">
-      <div class="mb-4">
-        <a href="index.html#projects" class="text-accent hover:text-white transition" data-i18n="page_radio.back">← Back
-          to Projects</a>
+      <div class="mb-2">
+        <a href="index.html#projects" class="breadcrumb-back" data-i18n="page_radio.back">
+          <span>←</span> Back to Projects
+        </a>
       </div>
 
-      <h1 class="text-3xl md:text-4xl font-bold mb-4 text-white" data-i18n="page_radio.title">
-        Reconfigurable Computing Applications in Radio Astronomy DSP
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 text-white leading-tight" data-i18n="page_radio.title">
+        <span class="gradient-text">Reconfigurable Computing</span> Applications in Radio Astronomy DSP
       </h1>
 
       <div class="flex gap-2 mb-8">
@@ -51,17 +52,16 @@
       </div>
 
       <!-- Overview -->
-      <div class="mb-8 bg-light-grey p-6 rounded-xl border border-medium-grey">
-        <h2 class="text-xl font-semibold mb-4 text-white flex items-center gap-2">
-          <span>📡</span> <span data-i18n="page_radio.overview.title">Project Overview</span>
-        </h2>
-        <p class="text-medium-grey mb-4 leading-relaxed" data-i18n="page_radio.overview.p1">
+      <div class="mb-12 bg-light-grey p-8 rounded-2xl border border-medium-grey relative overflow-hidden">
+        <div class="absolute top-0 right-0 p-4 opacity-10 text-6xl">📡</div>
+        <span class="project-section-label" data-i18n="page_radio.overview.title">Project Overview</span>
+        <p class="text-lg text-medium-grey mb-6 leading-relaxed" data-i18n="page_radio.overview.p1">
           This project focuses on developing reconfigurable computing applications for digital signal processing
           in radio astronomy as part of the <strong class="text-white">BINGO (Baryon Acoustic Oscillations in
             Neutral Gas Observations)</strong> radiotelescope project at the Federal University of Campina Grande
           (UFCG).
         </p>
-        <p class="text-medium-grey leading-relaxed" data-i18n="page_radio.overview.p2">
+        <p class="text-lg text-medium-grey leading-relaxed" data-i18n="page_radio.overview.p2">
           The work involves utilizing FPGA-based systems to implement real-time DSP algorithms for processing
           cosmological signals, enabling the study of large-scale structures in the universe through neutral
           hydrogen observations.
@@ -69,81 +69,64 @@
       </div>
 
       <!-- Research Context -->
-      <div class="mb-8">
-        <h2 class="text-xl font-semibold mb-4 text-white flex items-center gap-2">
-          <span>🔬</span> <span data-i18n="page_radio.context.title">Research Context</span>
-        </h2>
-        <p class="text-medium-grey mb-4 leading-relaxed">
-          <strong class="text-white" data-i18n="page_radio.context.position">Position:</strong> Postdoctoral Researcher
-          in Electrical Engineering / Radio
-          Astronomy<br>
-          <strong class="text-white" data-i18n="page_radio.context.institution">Institution:</strong> Federal University
-          of Campina Grande (UFCG), Brazil<br>
-          <strong class="text-white" data-i18n="page_radio.context.period">Period:</strong> 2024 - Present<br>
-          <strong class="text-white" data-i18n="page_radio.context.funding">Funding:</strong> FAPESQ (Research Support
-          Foundation of the State of Paraíba)
-        </p>
-        <p class="text-medium-grey leading-relaxed" data-i18n="page_radio.context.desc">
+      <div class="mb-12 grid md:grid-cols-2 gap-8">
+        <div>
+          <span class="project-section-label" data-i18n="page_radio.context.title">Research Context</span>
+          <div class="space-y-4 mt-4">
+            <div class="project-meta-item">
+              <span class="w-24 font-semibold text-white" data-i18n="page_radio.context.position">Position:</span>
+              <span class="text-medium-grey">Postdoctoral Researcher</span>
+            </div>
+            <div class="project-meta-item">
+              <span class="w-24 font-semibold text-white" data-i18n="page_radio.context.institution">Institution:</span>
+              <span class="text-medium-grey">Federal University of Campina Grande (UFCG)</span>
+            </div>
+            <div class="project-meta-item">
+              <span class="w-24 font-semibold text-white" data-i18n="page_radio.context.period">Period:</span>
+              <span class="text-medium-grey">2024 - Present</span>
+            </div>
+            <div class="project-meta-item">
+              <span class="w-24 font-semibold text-white" data-i18n="page_radio.context.funding">Funding:</span>
+              <span class="text-medium-grey">FAPESQ</span>
+            </div>
+          </div>
+        </div>
+        <div class="text-medium-grey leading-relaxed flex items-center p-6 bg-medium-grey/20 rounded-xl"
+          data-i18n="page_radio.context.desc">
           The BINGO project aims to map the distribution of neutral hydrogen in the universe using intensity
           mapping techniques, requiring sophisticated real-time signal processing capabilities to handle the
           massive data throughput from the radio telescope.
-        </p>
+        </div>
       </div>
 
       <!-- Technical Details -->
-      <div class="mb-8">
-        <h2 class="text-xl font-semibold mb-4 text-white flex items-center gap-2">
-          <span>⚙️</span> <span data-i18n="page_radio.tech.title">Technical Details</span>
-        </h2>
-        <div class="bg-light-grey p-6 rounded-xl border border-medium-grey">
-          <h3 class="text-lg font-semibold mb-3 text-white" data-i18n="page_radio.tech.key_title">Key Technologies</h3>
-          <ul class="space-y-2 text-medium-grey mb-6">
-            <li class="flex items-start">
-              <span class="text-accent mr-2">▸</span>
-              <span data-i18n="page_radio.tech.key_1"><strong class="text-white">FPGA Platforms:</strong> Xilinx devices
-                for hardware acceleration</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-accent mr-2">▸</span>
-              <span data-i18n="page_radio.tech.key_2"><strong class="text-white">Development Tools:</strong> Vivado
-                Design Suite for HDL synthesis and
-                implementation</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-accent mr-2">▸</span>
-              <span data-i18n="page_radio.tech.key_3"><strong class="text-white">Programming:</strong> VHDL/Verilog for
-                hardware description, Python/C++
-                for control and analysis</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-accent mr-2">▸</span>
-              <span data-i18n="page_radio.tech.key_4"><strong class="text-white">Signal Processing:</strong> FFT,
-                channelization, filtering, and
-                correlation algorithms</span>
-            </li>
-          </ul>
-
-          <h3 class="text-lg font-semibold mb-3 text-white" data-i18n="page_radio.tech.focus_title">Implementation Focus
-          </h3>
-          <ul class="space-y-2 text-medium-grey">
-            <li class="flex items-start">
-              <span class="text-accent mr-2">▸</span>
-              <span data-i18n="page_radio.tech.focus_1">Real-time spectral analysis of radio frequency signals</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-accent mr-2">▸</span>
-              <span data-i18n="page_radio.tech.focus_2">High-throughput data processing for cosmological
-                observations</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-accent mr-2">▸</span>
-              <span data-i18n="page_radio.tech.focus_3">Energy-efficient computation for continuous operation</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-accent mr-2">▸</span>
-              <span data-i18n="page_radio.tech.focus_4">Hardware-optimized algorithms for radio interferometry</span>
-            </li>
-          </ul>
+      <div class="mb-12">
+        <span class="project-section-label" data-i18n="page_radio.tech.title">Technical Details</span>
+        <div class="grid md:grid-cols-2 gap-6 mt-4">
+          <div class="project-info-card">
+            <h3 class="text-lg font-bold mb-4 text-white flex items-center gap-2">
+              <span class="text-accent">▸</span>
+              <span data-i18n="page_radio.tech.key_title">Key Technologies</span>
+            </h3>
+            <ul class="space-y-3 text-medium-grey">
+              <li data-i18n="page_radio.tech.key_1">FPGA Platforms: Xilinx devices</li>
+              <li data-i18n="page_radio.tech.key_2">Development Tools: Vivado Design Suite</li>
+              <li data-i18n="page_radio.tech.key_3">Programming: VHDL/Verilog, Python/C++</li>
+              <li data-i18n="page_radio.tech.key_4">Signal Processing: FFT, Channelization</li>
+            </ul>
+          </div>
+          <div class="project-info-card">
+            <h3 class="text-lg font-bold mb-4 text-white flex items-center gap-2">
+              <span class="text-accent">▸</span>
+              <span data-i18n="page_radio.tech.focus_title">Implementation Focus</span>
+            </h3>
+            <ul class="space-y-3 text-medium-grey">
+              <li data-i18n="page_radio.tech.focus_1">Real-time spectral analysis</li>
+              <li data-i18n="page_radio.tech.focus_2">High-throughput data processing</li>
+              <li data-i18n="page_radio.tech.focus_3">Energy-efficient computation</li>
+              <li data-i18n="page_radio.tech.focus_4">Hardware-optimized algorithms</li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -181,52 +164,30 @@
       </div>
 
       <!-- Impact -->
-      <div class="mb-8">
-        <h2 class="text-xl font-semibold mb-4 text-white flex items-center gap-2">
-          <span>💡</span> <span data-i18n="page_radio.impact.title">Research Impact</span>
-        </h2>
-        <p class="text-medium-grey leading-relaxed mb-4" data-i18n="page_radio.impact.desc">
-          This work contributes to the advancement of radio astronomy instrumentation by leveraging reconfigurable
-          computing to achieve:
-        </p>
-        <ul class="space-y-2 text-medium-grey">
-          <li class="flex items-start">
-            <span class="text-accent mr-2">▸</span>
-            <span data-i18n="page_radio.impact.list_1">Significant reduction in data processing latency compared to
-              traditional CPU-based approaches</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-accent mr-2">▸</span>
-            <span data-i18n="page_radio.impact.list_2">Lower power consumption for continuous astronomical
-              observations</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-accent mr-2">▸</span>
-            <span data-i18n="page_radio.impact.list_3">Scalable architectures adaptable to various radio astronomy
-              applications</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-accent mr-2">▸</span>
-            <span data-i18n="page_radio.impact.list_4">Enhanced signal-to-noise ratio through optimized digital
-              filtering techniques</span>
-          </li>
-        </ul>
+      <div class="mb-16">
+        <span class="project-section-label" data-i18n="page_radio.impact.title">Research Impact</span>
+        <div class="p-8 bg-accent/5 border border-accent/20 rounded-2xl">
+          <p class="text-xl text-white mb-8" data-i18n="page_radio.impact.desc">
+            This work contributes to the advancement of radio astronomy instrumentation by leveraging reconfigurable
+            computing to achieve:
+          </p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="feature-tag" data-i18n="page_radio.impact.list_1">Significant latency reduction</div>
+            <div class="feature-tag" data-i18n="page_radio.impact.list_2">Lower power consumption</div>
+            <div class="feature-tag" data-i18n="page_radio.impact.list_3">Scalable architectures</div>
+            <div class="feature-tag" data-i18n="page_radio.impact.list_4">Enhanced SNR ratios</div>
+          </div>
+        </div>
       </div>
 
-      <!-- Related Work -->
-      <div class="mb-8 bg-light-grey p-6 rounded-xl border border-medium-grey">
-        <h2 class="text-xl font-semibold mb-4 text-white">Related Publications</h2>
-        <p class="text-medium-grey text-sm italic">
-          Publications related to this project are currently in preparation and will be listed here upon release.
-        </p>
-      </div>
+
 
       <!-- Actions -->
-      <div class="flex gap-4 mt-8 flex-wrap">
-        <a href="index.html#projects" class="btn-primary">
+      <div class="flex gap-6 mt-12 flex-wrap items-center justify-center py-12 border-t border-medium-grey">
+        <a href="index.html#projects" class="btn-primary" data-i18n="page_radio.back">
           ← Back to Projects
         </a>
-        <a href="index.html#contact" class="btn-secondary">
+        <a href="index.html#contact" class="btn-secondary" data-i18n="contact.title">
           Discuss This Project
         </a>
         <a href="Curriculum_vitae.pdf" class="btn-secondary">
