@@ -1,4 +1,4 @@
-// Translations for English and Portuguese
+// Comprehensive translations for English and Portuguese
 const translations = {
     en: {
         nav: {
@@ -31,7 +31,23 @@ const translations = {
             transition: "I've since transitioned to applied engineering, concentrating on adaptive complex systems and reconfigurable computing. My work has spanned from real-time fault detection in drones using chaos theory at TU Dresden to FPGA-based digital signal processing for radio astronomy at the BINGO radiotelescope at UFCG.",
             interestsTitle: "Research Interests"
         },
+        education: {
+            title: "Education"
+        },
+        research: {
+            title: "Research Experience"
+        },
+        projects: {
+            title: "Projects"
+        },
+        publications: {
+            title: "Publications"
+        },
+        skills: {
+            title: "Skills & Expertise"
+        },
         contact: {
+            title: "Contact",
             description: "Feel free to reach out for collaborations, research opportunities, or engineering work. I'm always open to discussing new projects and ideas."
         },
         footer: {
@@ -69,7 +85,23 @@ const translations = {
             transition: "Desde então, fiz a transição para engenharia aplicada, concentrando-me em sistemas complexos adaptativos e computação reconfigurável. Meu trabalho abrangeu desde detecção de falhas em tempo real em drones usando teoria do caos na TU Dresden até processamento digital de sinais baseado em FPGA para radioastronomia no radiotelescópio BINGO na UFCG.",
             interestsTitle: "Interesses de Pesquisa"
         },
+        education: {
+            title: "Formação Acadêmica"
+        },
+        research: {
+            title: "Experiência em Pesquisa"
+        },
+        projects: {
+            title: "Projetos"
+        },
+        publications: {
+            title: "Publicações"
+        },
+        skills: {
+            title: "Habilidades e Expertise"
+        },
         contact: {
+            title: "Contato",
             description: "Sinta-se à vontade para entrar em contato para colaborações, oportunidades de pesquisa ou trabalho em engenharia. Estou sempre aberto a discutir novos projetos e ideias."
         },
         footer: {
@@ -96,15 +128,27 @@ function setLanguage(lang) {
     // Update nav links
     document.querySelectorAll('[data-i18n-nav]').forEach(el => {
         const key = el.getAttribute('data-i18n-nav');
-        el.textContent = translations[lang].nav[key];
+        if (translations[lang].nav[key]) {
+            el.textContent = translations[lang].nav[key];
+        }
     });
 
-    // Update hero section
-    const heroGreeting = document.querySelector('[data-i18n="hero.greeting"]');
-    if (heroGreeting) heroGreeting.textContent = translations[lang].hero.greeting;
+    // Update all elements with data-i18n attribute
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        const keys = key.split('.');
+        let value = translations[lang];
 
-    const heroSubtitle = document.querySelector('[data-i18n="hero.subtitle"]');
-    if (heroSubtitle) heroSubtitle.textContent = translations[lang].hero.subtitle;
+        for (const k of keys) {
+            if (value[k]) {
+                value = value[k];
+            }
+        }
+
+        if (typeof value === 'string') {
+            el.textContent = value;
+        }
+    });
 
     // Update stats labels
     const statsLabels = document.querySelectorAll('.stat-label');
@@ -114,50 +158,15 @@ function setLanguage(lang) {
         statsLabels[2].textContent = translations[lang].hero.stats.publications;
     }
 
-    // Update buttons
-    const btnViewWork = document.querySelector('[data-i18n="hero.viewWork"]');
-    if (btnViewWork) btnViewWork.textContent = translations[lang].hero.buttons.viewWork;
-
-    const btnCV = document.querySelector('[data-i18n="hero.downloadCV"]');
-    if (btnCV) btnCV.textContent = translations[lang].hero.buttons.downloadCV;
-
-    const btnCVPub = document.querySelector('[data-i18n="hero.cvPublications"]');
-    if (btnCVPub) btnCVPub.textContent = translations[lang].hero.buttons.cvPublications;
-
-    // Update About section
-    const aboutTitle = document.querySelector('[data-i18n="about.title"]');
-    if (aboutTitle) aboutTitle.textContent = translations[lang].about.title;
-
-    const aboutIntro = document.querySelector('[data-i18n="about.intro"]');
-    if (aboutIntro) aboutIntro.textContent = translations[lang].about.intro;
-
-    const aboutJourney = document.querySelector('[data-i18n="about.journey"]');
-    if (aboutJourney) aboutJourney.textContent = translations[lang].about.journey;
-
-    const aboutTransition = document.querySelector('[data-i18n="about.transition"]');
-    if (aboutTransition) aboutTransition.textContent = translations[lang].about.transition;
-
-    const interestsTitle = document.querySelector('[data-i18n="about.interestsTitle"]');
-    if (interestsTitle) interestsTitle.textContent = translations[lang].about.interestsTitle;
-
-    // Update Contact section
-    const contactDesc = document.querySelector('[data-i18n="contact.description"]');
-    if (contactDesc) contactDesc.textContent = translations[lang].contact.description;
-
-    // Update Footer
-    const footerCopyright = document.querySelector('[data-i18n="footer.copyright"]');
-    if (footerCopyright) footerCopyright.textContent = translations[lang].footer.copyright;
-
-    // Update language toggle
-    const langFlag = document.querySelector('.lang-flag');
-    const langText = document.querySelector('.lang-text');
-    if (lang === 'en') {
-        langFlag.textContent = '🇺🇸';
-        langText.textContent = 'EN';
-    } else {
-        langFlag.textContent = '🇧🇷';
-        langText.textContent = 'PT';
-    }
+    // Update flag button active states
+    document.querySelectorAll('.lang-flag').forEach(flag => {
+        const flagLang = flag.getAttribute('data-lang');
+        if (flagLang === lang) {
+            flag.classList.add('active');
+        } else {
+            flag.classList.remove('active');
+        }
+    });
 }
 
 // Initialize language on page load
@@ -165,13 +174,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const preferredLang = getPreferredLanguage();
     setLanguage(preferredLang);
 
-    // Language toggle button
-    const langToggle = document.getElementById('langToggle');
-    if (langToggle) {
-        langToggle.addEventListener('click', function () {
-            const currentLang = localStorage.getItem('preferredLanguage') || 'en';
-            const newLang = currentLang === 'en' ? 'pt' : 'en';
+    // Language toggle - click on individual flags
+    document.querySelectorAll('.lang-flag').forEach(flag => {
+        flag.addEventListener('click', function () {
+            const newLang = this.getAttribute('data-lang');
             setLanguage(newLang);
         });
-    }
+    });
 });
