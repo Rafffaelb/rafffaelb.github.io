@@ -21,7 +21,11 @@
         <a href="index.html#about" class="hover:text-white transition">About</a>
         <a href="index.html#projects" class="hover:text-white transition">Projects</a>
         <a href="index.html#publications" class="hover:text-white transition">Publications</a>
-        <a href="index.html#contact" class="hover:text-white transition">Contact</a>
+        <a href="index.html#contact" class="hover:text-white transition" data-i18n-nav="contact">Contact</a>
+        <div id="langToggle" class="lang-toggle" title="Switch language / Mudar idioma">
+          <img src="flag_uk.png" alt="English" class="lang-flag" data-lang="en">
+          <img src="flag_br.png" alt="Português" class="lang-flag" data-lang="pt">
+        </div>
       </nav>
     </div>
   </header>
@@ -30,10 +34,11 @@
   <section class="min-h-screen pt-32 pb-16 px-6">
     <div class="max-w-4xl mx-auto">
       <div class="mb-4">
-        <a href="index.html#projects" class="text-accent hover:text-white transition">← Back to Projects</a>
+        <a href="index.html#projects" class="text-accent hover:text-white transition" data-i18n="page_quantum.back">←
+          Back to Projects</a>
       </div>
 
-      <h1 class="text-3xl md:text-4xl font-bold mb-4 text-white">
+      <h1 class="text-3xl md:text-4xl font-bold mb-4 text-white" data-i18n="page_quantum.title">
         Quantum Transport Simulations in Mesoscopic Systems
       </h1>
 
@@ -48,14 +53,14 @@
       <!-- Overview -->
       <div class="mb-8 bg-light-grey p-6 rounded-xl border border-medium-grey">
         <h2 class="text-xl font-semibold mb-4 text-white flex items-center gap-2">
-          <span>⚛️</span> Project Overview
+          <span>⚛️</span> <span data-i18n="page_quantum.overview.title">Project Overview</span>
         </h2>
-        <p class="text-medium-grey mb-4 leading-relaxed">
+        <p class="text-medium-grey mb-4 leading-relaxed" data-i18n="page_quantum.overview.p1">
           This project encompasses my <strong class="text-white">PhD research focused on numerical simulations
             and statistical analysis of quantum transport phenomena in mesoscopic systems</strong>, with particular
           emphasis on the Altland-Zirnbauer symmetry classification.
         </p>
-        <p class="text-medium-grey leading-relaxed">
+        <p class="text-medium-grey leading-relaxed" data-i18n="page_quantum.overview.p2">
           The research investigated fundamental quantum properties including entanglement, conductance fluctuations,
           and thermodynamic uncertainty relations in nanoscale devices using advanced computational methods and
           random matrix theory.
@@ -65,54 +70,63 @@
       <!-- PhD Thesis -->
       <div class="mb-8 bg-light-grey p-6 rounded-xl border border-accent">
         <h2 class="text-xl font-semibold mb-4 text-white flex items-center gap-2">
-          <span>🎓</span> PhD Thesis
+          <span>🎓</span> <span data-i18n="page_quantum.thesis.title">PhD Thesis</span>
         </h2>
         <div class="publication-title mb-2">
           "Unveiling the universal class categorization of Altland-Zirnbauer in mesoscopic systems:
           probing entanglement and conductance fluctuations"
         </div>
         <div class="publication-venue mb-3">
-          <strong class="text-white">Institution:</strong> Federal University of Paraíba (UFPB), Brazil<br>
-          <strong class="text-white">Period:</strong> 2019 - 2023<br>
-          <strong class="text-white">Advisor:</strong> Prof. Jorge Gabriel Gomes de Souza Ramos<br>
-          <strong class="text-white">Area:</strong> Condensed Matter Physics / Mesoscopic Physics
+          <strong class="text-white" data-i18n="page_quantum.thesis.venue">Institution:</strong> Federal University of
+          Paraíba (UFPB), Brazil<br>
+          <strong class="text-white" data-i18n="page_quantum.thesis.period">Period:</strong> 2019 - 2023<br>
+          <strong class="text-white" data-i18n="page_quantum.thesis.advisor">Advisor:</strong> Prof. Jorge Gabriel Gomes
+          de Souza Ramos<br>
+          <strong class="text-white" data-i18n="page_quantum.thesis.area">Area:</strong> Condensed Matter Physics /
+          Mesoscopic Physics
         </div>
       </div>
 
       <!-- Research Focus -->
       <div class="mb-8">
         <h2 class="text-xl font-semibold mb-4 text-white flex items-center gap-2">
-          <span>🔬</span> Research Focus
+          <span>🔬</span> <span data-i18n="page_quantum.focus.title">Research Focus</span>
         </h2>
         <div class="bg-light-grey p-6 rounded-xl border border-medium-grey">
-          <h3 class="text-lg font-semibold mb-3 text-white">Altland-Zirnbauer Classification</h3>
-          <p class="text-medium-grey mb-4 leading-relaxed">
+          <h3 class="text-lg font-semibold mb-3 text-white" data-i18n="page_quantum.focus.az_title">Altland-Zirnbauer
+            Classification</h3>
+          <p class="text-medium-grey mb-4 leading-relaxed" data-i18n="page_quantum.focus.az_desc">
             The <strong class="text-white">Altland-Zirnbauer (AZ) classification</strong> is a comprehensive
             framework for categorizing random matrix ensembles based on fundamental symmetries (time-reversal,
             particle-hole, and chiral symmetry). This classification has profound implications for understanding
             quantum transport in mesoscopic systems.
           </p>
 
-          <h3 class="text-lg font-semibold mb-3 text-white">Key Research Areas</h3>
+          <h3 class="text-lg font-semibold mb-3 text-white" data-i18n="page_quantum.focus.areas_title">Key Research
+            Areas</h3>
           <ul class="space-y-2 text-medium-grey">
             <li class="flex items-start">
               <span class="text-accent mr-2">▸</span>
-              <span><strong class="text-white">Quantum Entanglement:</strong> Investigation of entanglement
+              <span data-i18n="page_quantum.focus.area_1"><strong class="text-white">Quantum Entanglement:</strong>
+                Investigation of entanglement
                 properties in open quantum systems using the Keldysh formalism</span>
             </li>
             <li class="flex items-start">
               <span class="text-accent mr-2">▸</span>
-              <span><strong class="text-white">Conductance Fluctuations:</strong> Statistical analysis of
+              <span data-i18n="page_quantum.focus.area_2"><strong class="text-white">Conductance Fluctuations:</strong>
+                Statistical analysis of
                 universal conductance fluctuations across different AZ symmetry classes</span>
             </li>
             <li class="flex items-start">
               <span class="text-accent mr-2">▸</span>
-              <span><strong class="text-white">Random Matrix Theory:</strong> Application of RMT to model
+              <span data-i18n="page_quantum.focus.area_3"><strong class="text-white">Random Matrix Theory:</strong>
+                Application of RMT to model
                 chaotic quantum systems and predict statistical properties</span>
             </li>
             <li class="flex items-start">
               <span class="text-accent mr-2">▸</span>
-              <span><strong class="text-white">Thermodynamic Uncertainty Relations:</strong> Exploring
+              <span data-i18n="page_quantum.focus.area_4"><strong class="text-white">Thermodynamic Uncertainty
+                  Relations:</strong> Exploring
                 fundamental limits on precision in mesoscopic devices</span>
             </li>
           </ul>
@@ -122,18 +136,20 @@
       <!-- Master's Thesis -->
       <div class="mb-8">
         <h2 class="text-xl font-semibold mb-4 text-white flex items-center gap-2">
-          <span>📖</span> Master's Thesis
+          <span>📖</span> <span data-i18n="page_quantum.master.title">Master's Thesis</span>
         </h2>
         <div class="bg-light-grey p-6 rounded-xl border border-medium-grey">
           <div class="publication-title mb-2">
             "Chaos-mediated entanglement in an open quantum dot via the Keldysh formalism"
           </div>
           <div class="publication-venue mb-3">
-            <strong class="text-white">Institution:</strong> Federal University of Paraíba (UFPB), Brazil<br>
-            <strong class="text-white">Period:</strong> 2017 - 2019<br>
-            <strong class="text-white">Advisor:</strong> Prof. Jorge Gabriel Gomes de Souza Ramos
+            <strong class="text-white" data-i18n="page_quantum.master.venue">Institution:</strong> Federal University of
+            Paraíba (UFPB), Brazil<br>
+            <strong class="text-white" data-i18n="page_quantum.master.period">Period:</strong> 2017 - 2019<br>
+            <strong class="text-white" data-i18n="page_quantum.master.advisor">Advisor:</strong> Prof. Jorge Gabriel
+            Gomes de Souza Ramos
           </div>
-          <p class="text-medium-grey leading-relaxed">
+          <p class="text-medium-grey leading-relaxed" data-i18n="page_quantum.master.desc">
             This work investigated how classical chaos in the underlying dynamics of quantum dots influences
             quantum entanglement generation. Using the Keldysh non-equilibrium Green's function formalism,
             the research established connections between chaos, decoherence, and quantum correlations.
@@ -218,34 +234,34 @@
       <!-- Key Findings -->
       <div class="mb-8">
         <h2 class="text-xl font-semibold mb-4 text-white flex items-center gap-2">
-          <span>💡</span> Key Scientific Contributions
+          <span>💡</span> <span data-i18n="page_quantum.contribution.title">Key Scientific Contributions</span>
         </h2>
         <div class="bg-light-grey p-6 rounded-xl border border-medium-grey">
           <ul class="space-y-3 text-medium-grey">
             <li class="flex items-start">
               <span class="text-accent mr-2 text-xl">▸</span>
-              <div>
+              <div data-i18n="page_quantum.contribution.c1">
                 <strong class="text-white">Universal Behavior:</strong> Demonstrated universal statistical
                 properties across different AZ symmetry classes in mesoscopic transport
               </div>
             </li>
             <li class="flex items-start">
               <span class="text-accent mr-2 text-xl">▸</span>
-              <div>
+              <div data-i18n="page_quantum.contribution.c2">
                 <strong class="text-white">Entanglement-Chaos Connection:</strong> Established quantitative
                 relationships between classical chaos and quantum entanglement generation
               </div>
             </li>
             <li class="flex items-start">
               <span class="text-accent mr-2 text-xl">▸</span>
-              <div>
+              <div data-i18n="page_quantum.contribution.c3">
                 <strong class="text-white">Thermodynamic Bounds:</strong> Derived and verified thermodynamic
                 uncertainty relations in quantum transport scenarios
               </div>
             </li>
             <li class="flex items-start">
               <span class="text-accent mr-2 text-xl">▸</span>
-              <div>
+              <div data-i18n="page_quantum.contribution.c4">
                 <strong class="text-white">Computational Framework:</strong> Developed efficient numerical
                 methods for large-scale quantum transport simulations
               </div>
@@ -256,27 +272,31 @@
 
       <!-- Impact -->
       <div class="mb-8 bg-light-grey p-6 rounded-xl border border-medium-grey">
-        <h2 class="text-xl font-semibold mb-4 text-white">Research Impact</h2>
-        <p class="text-medium-grey leading-relaxed mb-4">
+        <h2 class="text-xl font-semibold mb-4 text-white" data-i18n="page_quantum.impact.title">Research Impact</h2>
+        <p class="text-medium-grey leading-relaxed mb-4" data-i18n="page_quantum.impact.desc">
           This work contributes to the fundamental understanding of quantum transport in nanoscale devices,
           with implications for:
         </p>
         <ul class="space-y-2 text-medium-grey">
           <li class="flex items-start">
             <span class="text-accent mr-2">▸</span>
-            <span>Design principles for quantum devices and quantum computing architectures</span>
+            <span data-i18n="page_quantum.impact.list_1">Design principles for quantum devices and quantum computing
+              architectures</span>
           </li>
           <li class="flex items-start">
             <span class="text-accent mr-2">▸</span>
-            <span>Understanding decoherence mechanisms in open quantum systems</span>
+            <span data-i18n="page_quantum.impact.list_2">Understanding decoherence mechanisms in open quantum
+              systems</span>
           </li>
           <li class="flex items-start">
             <span class="text-accent mr-2">▸</span>
-            <span>Predicting performance limits of mesoscopic sensors and detectors</span>
+            <span data-i18n="page_quantum.impact.list_3">Predicting performance limits of mesoscopic sensors and
+              detectors</span>
           </li>
           <li class="flex items-start">
             <span class="text-accent mr-2">▸</span>
-            <span>Bridging classical chaos theory and quantum information theory</span>
+            <span data-i18n="page_quantum.impact.list_4">Bridging classical chaos theory and quantum information
+              theory</span>
           </li>
         </ul>
       </div>
@@ -301,8 +321,10 @@
 
   <!-- FOOTER -->
   <footer class="border-t border-medium-grey py-6 text-center text-sm text-dark-grey">
-    © 2026 Rafael A. Batista · Built with HTML + CSS
+    <span data-i18n="footer.copyright">© 2026 Rafael A. Batista · Built with HTML + CSS</span>
   </footer>
+
+  <script src="translations.js"></script>
 
   <script src="script.js?v=15.0"></script>
 </body>
