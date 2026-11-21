@@ -6,17 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- SEO Meta Tags -->
-  <title>Rafael A. Batista — Postdoctoral Researcher in Signal Processing & Reconfigurable Computing</title>
+  <title>Rafael A. Batista — Postdoctoral Researcher in Radio Astronomy Instrumentation & Reconfigurable Computing</title>
   <meta name="description"
-    content="Rafael A. Batista is a postdoctoral researcher specializing in signal processing, reconfigurable computing, FPGA systems, and quantum transport. Currently working on the BINGO radio astronomy project at UFCG." />
+    content="Rafael A. Batista is a postdoctoral researcher specializing in radio astronomy instrumentation, FPGA/DSP systems, reconfigurable computing, and quantum transport. Currently researching real-time signal processing for the BINGO radio telescope at UFCG." />
   <meta name="keywords"
-    content="Rafael Batista, FPGA, Signal Processing, Radio Astronomy, Quantum Transport, Reconfigurable Computing, BINGO, Digital Signal Processing" />
+    content="Rafael Batista, FPGA, RFSoC, Signal Processing, Radio Astronomy, Quantum Transport, Reconfigurable Computing, BINGO, Digital Signal Processing, SKARAB" />
   <meta name="author" content="Rafael A. Batista" />
 
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Rafael A. Batista — Postdoctoral Researcher" />
   <meta property="og:description"
-    content="Postdoctoral researcher specializing in signal processing, reconfigurable computing, and quantum transport. Currently working on the BINGO radiotelescope project at UFCG." />
+    content="Postdoctoral researcher specializing in radio astronomy instrumentation, FPGA/DSP systems, and quantum transport. Currently researching real-time signal processing for the BINGO radio telescope at UFCG." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://rafffaelb.github.io/" />
   <meta property="og:image" content="https://rafffaelb.github.io/my_photo.jpg" />
@@ -28,7 +28,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Rafael A. Batista — Postdoctoral Researcher" />
   <meta name="twitter:description"
-    content="Postdoctoral researcher specializing in signal processing, reconfigurable computing, and quantum transport." />
+    content="Postdoctoral researcher specializing in radio astronomy instrumentation, FPGA/DSP systems, and quantum transport." />
   <meta name="twitter:image" content="https://rafffaelb.github.io/my_photo.jpg" />
 
   <!-- Schema.org markup for Google -->
@@ -44,10 +44,12 @@
       "https://orcid.org/0000-0002-7906-1505"
     ],
     "jobTitle": "Postdoctoral Researcher",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Federal University of Campina Grande"
-    },
+    "worksFor": [
+      {
+        "@type": "Organization",
+        "name": "Federal University of Campina Grande"
+      }
+    ],
     "alumniOf": [
       {
         "@type": "Organization",
@@ -61,29 +63,50 @@
   <link rel="icon" type="image/png"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔬</text></svg>">
 
-  <link rel="stylesheet" href="styles.css?v=15.0">
+  <link rel="stylesheet" href="styles.css?v=17.0">
 </head>
 
 <body class="bg-dark-grey text-light-grey antialiased">
 
   <!-- NAVBAR -->
-  <header class="fixed w-full z-50 bg-dark-grey/80 backdrop-blur border-b border-medium-grey">
-    <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-3">
-      <h1 class="text-base font-semibold text-white">Rafael Batista</h1>
-      <nav class="flex items-center space-x-6 text-sm text-medium-grey">
-        <a href="#about" class="hover:text-white transition" data-i18n-nav="about">About</a>
-        <a href="#education" class="hover:text-white transition" data-i18n-nav="education">Education</a>
-        <a href="#research" class="hover:text-white transition" data-i18n-nav="research">Research</a>
-        <a href="#projects" class="hover:text-white transition" data-i18n-nav="projects">Projects</a>
-        <a href="#publications" class="hover:text-white transition" data-i18n-nav="publications">Publications</a>
-        <a href="#skills" class="hover:text-white transition" data-i18n-nav="skills">Skills</a>
-        <a href="#contact" class="hover:text-white transition" data-i18n-nav="contact">Contact</a>
-        <div id="langToggle" class="lang-toggle" title="Switch language / Mudar idioma">
-          <img src="flag_uk.png" alt="English" class="lang-flag" data-lang="en">
-          <img src="flag_br.png" alt="Português" class="lang-flag" data-lang="pt">
-        </div>
+  <header class="site-header fixed w-full z-50 bg-dark-grey/80 backdrop-blur border-b border-medium-grey">
+    <div class="nav-inner max-w-6xl mx-auto flex justify-between items-center px-6">
+      <h1 class="site-brand">Rafael A. <span class="text-accent">Batista</span></h1>
+
+      <nav class="nav-desktop" aria-label="Main navigation">
+        <a href="#about" data-i18n-nav="about">About</a>
+        <a href="#education" data-i18n-nav="education">Education</a>
+        <a href="#research" data-i18n-nav="research">Research</a>
+        <a href="#projects" data-i18n-nav="projects">Projects</a>
+        <a href="#publications" data-i18n-nav="publications">Publications</a>
+        <a href="#skills" data-i18n-nav="skills">Skills</a>
+        <a href="#contact" data-i18n-nav="contact">Contact</a>
       </nav>
+
+      <div class="nav-actions flex items-center gap-4">
+        <button id="langToggle" class="lang-toggle" title="Switch language / Mudar idioma">
+          <span class="lang-flag">🇺🇸</span>
+          <span class="lang-text">EN</span>
+        </button>
+        <button id="menuToggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <line x1="4" y1="7" x2="20" y2="7" />
+            <line x1="4" y1="12" x2="20" y2="12" />
+            <line x1="4" y1="17" x2="20" y2="17" />
+          </svg>
+        </button>
+      </div>
     </div>
+
+    <nav id="mobileMenu" class="nav-mobile" aria-label="Mobile navigation">
+      <a href="#about" data-i18n-nav="about">About</a>
+      <a href="#education" data-i18n-nav="education">Education</a>
+      <a href="#research" data-i18n-nav="research">Research</a>
+      <a href="#projects" data-i18n-nav="projects">Projects</a>
+      <a href="#publications" data-i18n-nav="publications">Publications</a>
+      <a href="#skills" data-i18n-nav="skills">Skills</a>
+      <a href="#contact" data-i18n-nav="contact">Contact</a>
+    </nav>
   </header>
 
   <!-- HERO -->
@@ -98,11 +121,11 @@
           Batista</span>
       </h2>
       <p class="text-medium-grey text-lg leading-relaxed mb-4" data-i18n="hero.subtitle">
-        Postdoc Researcher · Signal Processing · Reconfigurable Computing · Real‑time Systems
+        Postdoctoral Researcher · Radio Astronomy Instrumentation · FPGA &amp; Real‑time Signal Processing
       </p>
       <div class="stats-container flex justify-center gap-8 mb-8">
         <div class="stat-item">
-          <div class="stat-number">7+</div>
+          <div class="stat-number">3+</div>
           <div class="stat-label">Years Research</div>
         </div>
         <div class="stat-item">
@@ -110,7 +133,7 @@
           <div class="stat-label">Postdocs</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number">3+</div>
+          <div class="stat-number">10+</div>
           <div class="stat-label">Publications</div>
         </div>
       </div>
@@ -132,7 +155,7 @@
   <section id="about" class="bg-dark-grey max-w-6xl mx-auto px-6 pb-32 pt-40"
     style="position: relative; z-index: 10; background-color: #1a1a1a;">
     <h3 class="section-title">
-      <span class="section-icon">👨‍🔬</span>
+      <span class="section-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></span>
       <span data-i18n="about.title">About Me</span>
     </h3>
     <div class="grid md:grid-cols-2 gap-8">
@@ -140,7 +163,7 @@
         <p class="text-medium-grey leading-relaxed mb-4" data-i18n="about.intro">
           I'm a postdoctoral researcher and applied physicist working at the intersection of <strong
             class="text-white">physics,
-            real‑time digital signal processing, and hardware acceleration</strong>.
+            real‑time digital signal processing, and hardware acceleration</strong>. I currently design <strong class="text-white">FPGA-based digital signal processing systems</strong> for the <strong class="text-white">BINGO radiotelescope</strong> at the Federal University of Campina Grande (UFCG).
         </p>
         <p class="text-medium-grey leading-relaxed mb-4" data-i18n="about.journey">
           My research journey began in <strong class="text-white">quantum physics</strong>, where I focused on numerical
@@ -151,8 +174,8 @@
         <p class="text-medium-grey leading-relaxed" data-i18n="about.transition">
           I've since transitioned to applied engineering, concentrating on <strong class="text-white">adaptive complex
             systems
-            and reconfigurable computing</strong>. My work has spanned from real-time fault detection in drones using
-          chaos theory at TU Dresden to FPGA-based digital signal processing for radio astronomy at the
+            and reconfigurable computing</strong>. My postdoctoral work has spanned real-time fault detection in drones
+          using chaos theory at TU Dresden, FPGA-based digital signal processing for the
           <strong class="text-white">BINGO radiotelescope</strong> at UFCG.
         </p>
       </div>
@@ -161,15 +184,15 @@
         <ul class="space-y-2 text-medium-grey">
           <li class="flex items-start">
             <span class="text-accent mr-2">▸</span>
-            <span>FPGA‑based systems and hardware acceleration</span>
+            <span>Radio astronomy instrumentation and digital backends</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-accent mr-2">▸</span>
+            <span>FPGA/RFSoC‑based systems and hardware acceleration</span>
           </li>
           <li class="flex items-start">
             <span class="text-accent mr-2">▸</span>
             <span>Real‑time digital signal processing</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-accent mr-2">▸</span>
-            <span>Scientific instrumentation for radio astronomy</span>
           </li>
           <li class="flex items-start">
             <span class="text-accent mr-2">▸</span>
@@ -192,7 +215,7 @@
   <section id="education" class="bg-light-grey/40 border-t border-medium-grey">
     <div class="max-w-6xl mx-auto px-6 py-24">
       <h3 class="section-title">
-        <span class="section-icon">🎓</span>
+        <span class="section-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5L2 9z"/><path d="M6 11.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.5"/><line x1="22" y1="9" x2="22" y2="14"/></svg></span>
         Education
       </h3>
 
@@ -250,12 +273,13 @@
   <!-- RESEARCH EXPERIENCE -->
   <section id="research" class="max-w-6xl mx-auto px-6 py-24">
     <h3 class="section-title">
-      <span class="section-icon">🔬</span>
-      <span data-i18n="research.title">Research Experience</span>
+      <span class="section-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6"/><path d="M10 3v5.3L4.7 17.4a2 2 0 0 0 1.8 3h11a2 2 0 0 0 1.8-3L14 8.3V3"/><line x1="7.5" y1="14.5" x2="16.5" y2="14.5"/></svg></span>
+      Research Experience
     </h3>
 
     <div class="timeline">
-      <!-- Current Postdoc -->
+
+      <!-- UFCG Postdoc (current) -->
       <div class="timeline-item">
         <div class="timeline-marker current"></div>
         <div class="timeline-content">
@@ -269,35 +293,38 @@
             <strong>Funding:</strong> FAPESQ (Research Support Foundation of the State of Paraíba)
           </p>
           <p class="timeline-description">
-            Working on reconfigurable computing applications for digital signal processing in radio astronomy,
-            utilizing FPGAs for real-time data processing and analysis of cosmological signals.
+            Designing wideband spectrometers and polyphase filter banks in VHDL/Verilog for real-time,
+            multi-GHz RF data streams on SKARAB/Xilinx FPGAs, implementing 40 GbE QSFP+ data streaming and
+            Python/C++ control software via the KATCP protocol.
           </p>
           <div class="tech-container mt-3">
             <span class="tech-item">FPGA</span>
             <span class="tech-item">DSP</span>
             <span class="tech-item">Vivado</span>
+            <span class="tech-item">40 GbE QSFP+</span>
             <span class="tech-item">Radio Astronomy</span>
             <span class="tech-item">Real-time Systems</span>
           </div>
         </div>
       </div>
 
-      <!-- Previous Postdoc -->
+      <!-- TUD Postdoc -->
       <div class="timeline-item">
         <div class="timeline-marker"></div>
         <div class="timeline-content">
           <div class="timeline-date">2023 — 2024</div>
-          <h4 class="timeline-title">Guest Researcher in Electrical Engineering</h4>
+          <h4 class="timeline-title">Postdoctoral Fellow &amp; Guest Researcher in Electrical Engineering</h4>
           <p class="timeline-institution">Technische Universität Dresden (TUD), Germany</p>
           <p class="timeline-description">
-            <strong>Funding:</strong> CAPES (Brazilian Federal Agency for Support and Evaluation of Graduate Education)
+            <strong>Funding:</strong> CAPES/DAAD (PROBRAL Program)
           </p>
           <p class="timeline-description">
-            <strong>Focus:</strong> Adaptive complex systems and reconfigurable computing
+            <strong>Focus:</strong> FLIN4 project — adaptive complex systems and reconfigurable computing
           </p>
           <p class="timeline-description">
             Investigated real-time fault detection techniques using chaos theory with drones,
             implementing AI-based diagnostics on FPGA platforms for autonomous systems.
+            Results published at DATE 2024 (Valencia, Spain).
           </p>
           <div class="tech-container mt-3">
             <span class="tech-item">FPGA</span>
@@ -315,14 +342,14 @@
   <section id="projects" class="bg-light-grey/40 border-t border-medium-grey">
     <div class="max-w-6xl mx-auto px-6 py-24">
       <h3 class="section-title">
-        <span class="section-icon">💻</span>
-        <span data-i18n="projects.title">Projects</span>
+        <span class="section-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+        Projects
       </h3>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- Card 1: Radio Astronomy DSP -->
         <a href="project_radio_astronomy_dsp.html" class="project-card">
-          <div class="project-icon">📡</div>
+          <div class="project-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49"/><path d="M7.76 16.24a6 6 0 0 1 0-8.49"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M4.93 19.07a10 10 0 0 1 0-14.14"/></svg></div>
           <h4 class="text-lg font-semibold mb-2 text-white">Reconfigurable Computing in Radio Astronomy DSP</h4>
           <p class="text-medium-grey text-sm mb-4">
             FPGA-based digital signal processing systems for the BINGO radiotelescope project,
@@ -337,7 +364,7 @@
 
         <!-- Card 2: Drones and Robotics -->
         <a href="project_drones_robotics.html" class="project-card">
-          <div class="project-icon">🚁</div>
+          <div class="project-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></div>
           <h4 class="text-lg font-semibold mb-2 text-white">AI-based Fault Detection in Drones</h4>
           <p class="text-medium-grey text-sm mb-4">
             Embedded system for real-time failure diagnosis in UAVs using AI and chaos-based
@@ -352,7 +379,7 @@
 
         <!-- Card 3: Quantum Transport -->
         <a href="project_quantum_transport.html" class="project-card">
-          <div class="project-icon">⚛️</div>
+          <div class="project-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="1.5"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></svg></div>
           <h4 class="text-lg font-semibold mb-2 text-white">Quantum Transport Simulations</h4>
           <p class="text-medium-grey text-sm mb-4">
             Numerical simulations and statistical analysis of quantum transport phenomena in
@@ -371,8 +398,8 @@
   <!-- PUBLICATIONS -->
   <section id="publications" class="max-w-6xl mx-auto px-6 py-24">
     <h3 class="section-title">
-      <span class="section-icon">📚</span>
-      <span data-i18n="publications.title">Publications</span>
+      <span class="section-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+      Publications
     </h3>
 
     <div class="publications-container">
@@ -380,6 +407,20 @@
       <div class="publication-category">
         <h4 class="text-xl font-semibold mb-4 text-white">Journal Articles</h4>
         <ul class="space-y-4">
+          <li class="publication-item">
+            <div class="publication-authors">
+              <span class="text-white">SALES, L. L.; DE FARIAS, K. E. L.; QUEIROZ, A. R.; SANTOS, J. R. L.; BATISTA, R. A.; et al.</span>
+            </div>
+            <div class="publication-title">
+              "Cosmographic constraints from late-time probes including fast radio bursts"
+            </div>
+            <div class="publication-venue">
+              <em class="text-medium-grey">Astronomy &amp; Astrophysics</em>, 2026 (Open Access).
+            </div>
+            <div class="publication-links">
+              <a href="https://doi.org/10.1051/0004-6361/202556561" target="_blank" class="publication-link">DOI</a>
+            </div>
+          </li>
           <li class="publication-item">
             <div class="publication-authors">
               <span class="text-white">LUCENA, I. R. A. C.; BATISTA, R. A.; RAMOS, J. G. G. S.</span>
@@ -397,10 +438,98 @@
         </ul>
       </div>
 
+      <!-- Preprints -->
+      <div class="publication-category mt-8">
+        <h4 class="text-xl font-semibold mb-4 text-white">Preprints</h4>
+        <ul class="space-y-4">
+          <li class="publication-item">
+            <div class="publication-authors">
+              <span class="text-white">SALES, L. L.; DE FARIAS, K. E. L.; QUEIROZ, A. R.; BATISTA, R. A.; RIBEIRO, B. W.; SANTOS, R. H.</span>
+            </div>
+            <div class="publication-title">
+              "Constraints on the baryon density from fast radio bursts using a non-parametric reconstruction of the Hubble parameter"
+            </div>
+            <div class="publication-venue">
+              <em class="text-medium-grey">arXiv preprint</em>, 2026.
+            </div>
+            <div class="publication-links">
+              <a href="https://arxiv.org/abs/2605.01990" target="_blank" class="publication-link">arXiv</a>
+            </div>
+          </li>
+          <li class="publication-item">
+            <div class="publication-authors">
+              <span class="text-white">DE FARIAS, K. E. L.; ANACLETO, M. A.; BATISTA, R. A.; et al.</span>
+            </div>
+            <div class="publication-title">
+              "Stefan-Boltzmann Law and Thermal Casimir Effect in Neutron Star Spacetime via Thermo Field Dynamics"
+            </div>
+            <div class="publication-venue">
+              <em class="text-medium-grey">arXiv preprint</em>, 2025.
+            </div>
+            <div class="publication-links">
+              <a href="https://arxiv.org/abs/2512.15610" target="_blank" class="publication-link">arXiv</a>
+            </div>
+          </li>
+          <li class="publication-item">
+            <div class="publication-authors">
+              <span class="text-white">SALES, L. L.; DE FARIAS, K. E. L.; QUEIROZ, A. R.; SANTOS, J. R. L.; BATISTA, R. A.; et al.</span>
+            </div>
+            <div class="publication-title">
+              "Model-independent observational constraints with fast radio bursts"
+            </div>
+            <div class="publication-venue">
+              <em class="text-medium-grey">arXiv preprint</em>, 2025.
+            </div>
+            <div class="publication-links">
+              <a href="https://arxiv.org/abs/2507.06975" target="_blank" class="publication-link">arXiv</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
       <!-- Conference Papers -->
       <div class="publication-category mt-8">
         <h4 class="text-xl font-semibold mb-4 text-white">Conference Proceedings</h4>
         <ul class="space-y-4">
+          <li class="publication-item">
+            <div class="publication-authors">
+              <span class="text-white">DI NINNI, P.; BATISTA, R. A.; NESTI, R.; ROSHI, D. A.</span>
+            </div>
+            <div class="publication-title">
+              "Modelling, simulation, imaging, and RFI mitigation for PAF-based radio telescope system"
+            </div>
+            <div class="publication-venue">
+              <em class="text-medium-grey">PAF 2026 — International Phased Array Feed &amp; Advanced Receiver Workshop</em>,
+              Guiyang, China, 2026.
+            </div>
+          </li>
+          <li class="publication-item">
+            <div class="publication-authors">
+              <span class="text-white">SANTANA, L. de F.; BATISTA, R. A.; et al.</span>
+            </div>
+            <div class="publication-title">
+              "Uirapuru Horn Antenna: Integrated System for Radio Frequency Monitoring and Receiver Component Evaluation"
+            </div>
+            <div class="publication-venue">
+              <em class="text-medium-grey">2025 SBMO/IEEE MTT-S International Microwave and Optoelectronics Conference (IMOC)</em>,
+              Campina Grande, Brazil, 2025, pp. 1-5.
+            </div>
+            <div class="publication-links">
+              <a href="https://doi.org/10.1109/IMOC65414.2025.11365753" target="_blank" class="publication-link">DOI</a>
+            </div>
+          </li>
+          <li class="publication-item">
+            <div class="publication-authors">
+              <span class="text-white">BATISTA, R. A.; et al.</span>
+            </div>
+            <div class="publication-title">
+              "SKARAB Digital Spectrometers for the BINGO Single-Dish Radio Telescope"
+            </div>
+            <div class="publication-venue">
+              <em class="text-medium-grey">CASPER 2025 — Collaboration for Astronomy Signal Processing and Electronics Research Workshop</em>,
+              2025.
+            </div>
+          </li>
           <li class="publication-item">
             <div class="publication-authors">
               <span class="text-white">BATISTA, R. A.; NICKEL, M.; LEHNERT, A.; PERTUZ, S.; REICHENBACH, M.; GOEHRINGER,
@@ -410,11 +539,11 @@
               "Towards an Embedded System for Failure Diagnosis in Drones Using AI and SAC-DM on FPGA"
             </div>
             <div class="publication-venue">
-              <em class="text-medium-grey">2024 Design, Automation & Test in Europe Conference & Exhibition (DATE)</em>,
+              <em class="text-medium-grey">2024 Design, Automation &amp; Test in Europe Conference &amp; Exhibition (DATE)</em>,
               Valencia, Spain, 2024.
             </div>
             <div class="publication-links">
-              <a href="#" class="publication-link">Conference</a>
+              <a href="https://doi.org/10.23919/DATE58400.2024.10546792" target="_blank" class="publication-link">DOI</a>
             </div>
           </li>
         </ul>
@@ -451,8 +580,8 @@
   <section id="skills" class="bg-light-grey/40 border-t border-medium-grey">
     <div class="max-w-6xl mx-auto px-6 py-24">
       <h3 class="section-title">
-        <span class="section-icon">🛠️</span>
-        <span data-i18n="skills.title">Skills & Expertise</span>
+        <span class="section-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></span>
+        Skills &amp; Expertise
       </h3>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -489,7 +618,7 @@
 
         <!-- Tools & Frameworks -->
         <div class="skill-category">
-          <h4 class="skill-category-title">Tools & Frameworks</h4>
+          <h4 class="skill-category-title">Tools &amp; Frameworks</h4>
           <div class="skill-list">
             <div class="skill-item">
               <span class="skill-name">Vivado</span>
@@ -522,13 +651,13 @@
         <div class="skill-category">
           <h4 class="skill-category-title">Technical Expertise</h4>
           <ul class="expertise-list">
-            <li>FPGA Design & Implementation</li>
+            <li>FPGA &amp; RFSoC Design</li>
             <li>Digital Signal Processing</li>
+            <li>Radio Astronomy Instrumentation</li>
             <li>Real-time Systems</li>
             <li>Hardware Acceleration</li>
             <li>Scientific Computing</li>
             <li>Statistical Analysis</li>
-            <li>Numerical Simulations</li>
             <li>Embedded Systems</li>
           </ul>
         </div>
@@ -538,10 +667,10 @@
           <h4 class="skill-category-title">Languages</h4>
           <ul class="expertise-list">
             <li><strong>Portuguese:</strong> Native</li>
-            <li><strong>English:</strong> Advanced</li>
-            <li><strong>Spanish:</strong> Intermediate</li>
-            <li><strong>German:</strong> Basic</li>
-            <li><strong>Italian:</strong> Basic</li>
+            <li><strong>English:</strong> C1 — Proficient</li>
+            <li><strong>Spanish:</strong> B1 — Independent</li>
+            <li><strong>German:</strong> A1 — Basic</li>
+            <li><strong>Italian:</strong> A1 — Basic</li>
           </ul>
         </div>
 
@@ -564,8 +693,8 @@
   <!-- CONTACT -->
   <section id="contact" class="max-w-6xl mx-auto px-6 py-24">
     <h3 class="section-title">
-      <span class="section-icon">📧</span>
-      <span data-i18n="contact.title">Contact</span>
+      <span class="section-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg></span>
+      Contact
     </h3>
     <p class="text-medium-grey mb-6 max-w-2xl mx-auto text-center" data-i18n="contact.description">
       Feel free to reach out for collaborations, research opportunities, or engineering work.
@@ -573,7 +702,8 @@
     </p>
     <div class="flex flex-wrap justify-center gap-4">
       <a href="mailto:rafael.alves.batista@gmail.com" class="btn-primary">
-        📧 Email
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg>
+        Email
       </a>
       <a href="https://github.com/Rafffaelb" target="_blank" class="btn-secondary">
         <svg class="inline w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
@@ -590,7 +720,8 @@
         LinkedIn
       </a>
       <a href="https://orcid.org/0000-0002-7906-1505" target="_blank" class="btn-secondary">
-        🔬 ORCID
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        ORCID
       </a>
     </div>
   </section>
@@ -605,7 +736,7 @@
   </footer>
 
   <script src="translations.js"></script>
-  <script src="script.js?v=15.0"></script>
+  <script src="script.js?v=17.0"></script>
 </body>
 
 </html>

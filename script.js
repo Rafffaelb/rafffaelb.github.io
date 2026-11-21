@@ -1,8 +1,8 @@
 // Smooth scrolling for navigation links
 document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        
+
         const targetId = this.getAttribute('href');
         if (targetId.startsWith('#')) {
             const targetSection = document.querySelector(targetId);
@@ -26,25 +26,37 @@ document.querySelectorAll('nav a').forEach(anchor => {
 
 // Add active class to navigation when scrolling to sections
 let activeSection = '';
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('nav a');
 
-window.addEventListener('scroll', function() {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('nav a');
+let isScrolling = false;
 
+window.addEventListener('scroll', function () {
+    if (!isScrolling) {
+        window.requestAnimationFrame(function () {
+            updateActiveSection();
+            isScrolling = false;
+        });
+        isScrolling = true;
+    }
+});
+
+function updateActiveSection() {
     let current = '';
+    const scrollPosition = window.pageYOffset;
 
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        if (pageYOffset >= (sectionTop - 70)) {
+        if (scrollPosition >= (sectionTop - 150)) { // Adjusted offset for better mobile experience
             current = section.getAttribute('id');
         }
     });
 
     // Only update if the active section has changed
-    if (current !== activeSection) {
+    if (current && current !== activeSection) {
         activeSection = current;
-        
+
         navLinks.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href') === '#' + current) {
@@ -52,7 +64,7 @@ window.addEventListener('scroll', function() {
             }
         });
     }
-});
+}
 
 // Intersection Observer for fade-in animations
 const observerOptions = {
@@ -125,7 +137,7 @@ if (skillsSection) {
 function animateCounter(element, target, duration = 2000) {
     let start = 0;
     const increment = target / (duration / 16);
-    
+
     const timer = setInterval(() => {
         start += increment;
         if (start >= target) {
@@ -161,55 +173,104 @@ if (statsContainer) {
     statsObserver.observe(statsContainer);
 }
 
+// Mobile menu toggle (hamburger)
+const menuToggle = document.getElementById('menuToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+
+function setMobileMenu(open) {
+    if (!menuToggle || !mobileMenu) return;
+    mobileMenu.classList.toggle('open', open);
+    menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+}
+
+if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', function () {
+        setMobileMenu(!mobileMenu.classList.contains('open'));
+    });
+
+    // Close the menu after tapping a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function () {
+            setMobileMenu(false);
+        });
+    });
+
+    // Close with Escape key
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+            setMobileMenu(false);
+            menuToggle.focus();
+        }
+    });
+
+    // Close when clicking outside the header
+    document.addEventListener('click', function (e) {
+        if (mobileMenu.classList.contains('open') && !e.target.closest('.site-header')) {
+            setMobileMenu(false);
+        }
+    });
+
+    // Close automatically when widening to desktop layout
+    window.addEventListener('resize', function () {
+        if (window.innerWidth > 900 && mobileMenu.classList.contains('open')) {
+            setMobileMenu(false);
+        }
+    });
+}
+
 // Add copy email functionality
 const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
 emailLinks.forEach(link => {
-    link.addEventListener('contextmenu', function(e) {
+    link.addEventListener('contextmenu', function (e) {
         // Allow right-click context menu
     });
 });
 
-// Parallax effect for hero section (subtle)
+// Parallax effect for hero section (subtle, desktop only)
 let ticking = false;
+const heroSection = document.querySelector('.min-h-screen');
 
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
+    // Disable on mobile to prevent freeze/jank
+    if (window.innerWidth < 768) return;
+
     if (!ticking) {
-        window.requestAnimationFrame(function() {
+        window.requestAnimationFrame(function () {
             const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.min-h-screen');
-            
-            if (hero && scrolled < window.innerHeight) {
-                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-                hero.style.opacity = 1 - (scrolled / window.innerHeight) * 0.5;
+
+            if (heroSection && scrolled < window.innerHeight) {
+                heroSection.style.transform = `translateY(${scrolled * 0.3}px)`; // Reduced speed
+                heroSection.style.opacity = 1 - (scrolled / window.innerHeight) * 0.5;
             }
-            
+
             ticking = false;
         });
-        
+
         ticking = true;
     }
 });
 
 // Add tooltip functionality for tech items
 document.querySelectorAll('.tech-item').forEach(item => {
-    item.addEventListener('mouseenter', function() {
+    item.addEventListener('mouseenter', function () {
         this.style.transform = 'scale(1.1)';
     });
-    
-    item.addEventListener('mouseleave', function() {
+
+    item.addEventListener('mouseleave', function () {
         this.style.transform = 'scale(1)';
     });
 });
 
 // Keyboard navigation support
-document.addEventListener('keydown', function(e) {
+document.addEventListener('keydown', function (e) {
     // Press 'H' to go to home
     if (e.key === 'h' || e.key === 'H') {
         if (!e.target.matches('input, textarea')) {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     }
-    
+
     // Press 'C' to scroll to contact
     if (e.key === 'c' || e.key === 'C') {
         if (!e.target.matches('input, textarea')) {
@@ -222,7 +283,7 @@ document.addEventListener('keydown', function(e) {
 });
 
 // Add loading state
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     document.body.classList.add('loaded');
 });
 
@@ -247,11 +308,11 @@ console.log('%cFeel free to reach out: rafael.alves.batista@gmail.com', 'color: 
 // Track scroll depth for analytics (if needed)
 let maxScroll = 0;
 
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
     if (scrollPercent > maxScroll) {
         maxScroll = scrollPercent;
-        
+
         // You can send this to analytics
         if (maxScroll > 25 && maxScroll < 26) {
             console.log('User scrolled 25% of the page');
@@ -269,11 +330,11 @@ window.addEventListener('scroll', function() {
 });
 
 // Initialize everything when DOM is ready
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     console.log('Personal website loaded successfully!');
-    
+
     // Add any initialization code here
-    
+
     // Example: Log page view (you can replace this with actual analytics)
     console.log('Page view logged:', new Date().toISOString());
 });
